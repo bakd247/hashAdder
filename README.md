@@ -11,4 +11,9 @@ only ONE match is needed to recover ANY key...
 please check out my youtube channel where I explain all of this code as well as much more "Math behind Bitcoin's ECDSA Algorithm" videos.
 https://www.youtube.com/@quitethecontrary1846
 
+If you would like to use the current version (very slow and gives wrong number of keys per second) which is an effective way to search for a key and is the main
+premise that the hashAdder version is derived from...you can see it here:
+
+https://github.com/bakd247/ecdsaKeyFinder
+
 Thank You
