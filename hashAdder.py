@@ -47,5 +47,6 @@ def sortKeys():
     elapsed_time = time.perf_counter()          
     print("                                                  ")
     print("Finished in" ,elapsed_time-t, "seconds")
+    print("Please note this is Just a key storing program and the Key Finder will be available soon. Note that this version only does the powers of 2 and not the combinations of 2 and 3 yet...")
 
 sortKeys()
