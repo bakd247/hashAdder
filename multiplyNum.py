@@ -28,7 +28,6 @@ for iter in trange(32,total=32,ascii=True,ncols=100,colour='#00ff00',unit='Rows'
         else:
             C = (B*DD)
             lists[iter].append(C)
-    iter = iter + 1
 tuples = []
 for list in lists:
     AA= tuple(list)
