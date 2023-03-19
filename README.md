@@ -1,5 +1,5 @@
 # hashAdder
-an optimized ecdsa private key finding tool
+An Optimized ECDSA Private Key Finding Tool
 
 Please note that the code listed in these files is just a preview of the current algorithm currently being written to show the methods that allow for the 
 reduction of complexity as well as much much faster run times compared ecdsaKeyFinder.
