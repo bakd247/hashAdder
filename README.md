@@ -13,10 +13,10 @@ Next the factors of the "unknonwn key" are created and searched for a match usin
 (in order to multiply an unknown key...the above x and y coordinates are replaced with the public key in question)
 
 "unknown key"= a key which the private key is NOT known and is to be recovered using this tool
-aka
-a base 10 number between 1 and 115792089237316195423570985008687907852837564279074904382605163141518161494337
+aka a base 10 number between 1 and 115792089237316195423570985008687907852837564279074904382605163141518161494337
 
 n = 115792089237316195423570985008687907852837564279074904382605163141518161494337
+
 "n-1" is the largest possible ECDSA private key and "1" is the smallest
 
 The fileCreator.py file is the method for creating files to store the keys accoriding to the first 4 digits of the x-coordinate...
