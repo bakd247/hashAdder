@@ -12,15 +12,21 @@ Next the factors of the "unknonwn key" are created and searched for a match usin
 (Can be confirmed with any ecdsa Library)
 (in order to multiply an unknown key...the above x and y coordinates are replaced with the public key in question)
 
-"unknown key"= a key which the private key is NOT known and is to be recovered using factors
-of the key within the modular form field - (1:n-1)
+"unknown key"= a key which the private key is NOT known and is to be recovered using this tool
+aka
+a base 10 number between 1 and 115792089237316195423570985008687907852837564279074904382605163141518161494337
+
+n = 115792089237316195423570985008687907852837564279074904382605163141518161494337
+"n-1" is the largest possible ECDSA private key and "1" is the smallest
 
 The fileCreator.py file is the method for creating files to store the keys accoriding to the first 4 digits of the x-coordinate...
 (The Finding algorithm will use suffixes and each file will be sorted in accending order to allow for a reducion to the search space for each search try)
 The ecdsaModule.py file is the a basic ecdsa implementation that uses the tinyEC library to create public keys...
 instead of adding up the binary positions of a key according to the binary of the multiple like the "tinyEC" library does...
+
 the tinyEC version is used in combiantion with the multiplyNum.py file to construct a "byte array" lookup table....reducing the complexity of each
 multiplication to (Theta(log32(n//2))) from (Theta(log2(n//2))) for all keys by reducing the number of additions from 255 down to 31...
+
 The idea is to use tuples as dictionaries to ensure the fastest possible lookup time as a result.
 And to show that by taking a multiple(number the publicKey is to be multiplied by) and changing it to a 32 byte array...the elements in this array
 can then be looked up according to the iteration in the array and dictionary respectively.
@@ -28,6 +34,7 @@ The hashAdder.py file is the method for storing the keys to give a status bar as
 
 The intentionis to use both multithreading and multiprocessing in order to calculate all of the multiples of 2 and 3 as well as all of the 
 divisions of 2 and 3....
+
 Once the keys are save to file in an organized and "quick search" fashion
 the program will then search for a match using random numbers multipled by the original generator x and y ((0x79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798, 0x483ada7726a3c4655da4fbfc0e1108a8fd17b448a68554199c47d08ffb10d4b8))
 only ONE match is needed to recover ANY key...
