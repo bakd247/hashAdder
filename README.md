@@ -12,8 +12,8 @@ Next the factors of the "unknonwn key" are created and searched for a match usin
 (Can be confirmed with any ecdsa Library)
 (in order to multiply an unknown key...the above x and y coordinates are replaced with the public key in question)
 
-"unknown key"= a key which the private key is NOT known and is to be recovered using factors of the key within the 
-modular form field - (1:n-1)
+"unknown key"= a key which the private key is NOT known and is to be recovered using factors
+of the key within the modular form field - (1:n-1)
 
 The fileCreator.py file is the method for creating files to store the keys accoriding to the first 4 digits of the x-coordinate...
 (The Finding algorithm will use suffixes and each file will be sorted in accending order to allow for a reducion to the search space for each search try)
