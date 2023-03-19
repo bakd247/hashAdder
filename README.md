@@ -8,7 +8,7 @@ Note that in order to multiply a public key when the private key is NOT known...
 you can easily get the correct answer just as if you had multiplied the private key by the "origional generators" (aka "g") x and y coordinates...
 Next the factors of the "unknonwn key" are created and searched for a match using random numbers multipled by the original generator x and y...
 
-(origional generator = (0x79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798, 0x483ada7726a3c4655da4fbfc0e1108a8fd17b448a68554199c47d08ffb10d4b8))
+(origional generator = (x = 79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798, y = 483ada7726a3c4655da4fbfc0e1108a8fd17b448a68554199c47d08ffb10d4b8))
 (Can be confirmed with any ecdsa Library)
 (in order to multiply an unknown key...the above x and y coordinates are replaced with the public key in question)
 
@@ -36,7 +36,7 @@ The intentionis to use both multithreading and multiprocessing in order to calcu
 divisions of 2 and 3....
 
 Once the keys are save to file in an organized and "quick search" fashion
-the program will then search for a match using random numbers multipled by the original generator x and y ((0x79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798, 0x483ada7726a3c4655da4fbfc0e1108a8fd17b448a68554199c47d08ffb10d4b8))
+the program will then search for a match using random numbers multipled by the original generator x and y ((x = 79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798, y = 483ada7726a3c4655da4fbfc0e1108a8fd17b448a68554199c47d08ffb10d4b8))
 only ONE match is needed to recover ANY key...
 
 please check out the youtube channel which explains all of this code as well as much more "Math behind Bitcoin's ECDSA Algorithm" videos.
