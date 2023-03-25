@@ -34,10 +34,34 @@ for list in lists:
     tuples.append(AA)
 grid = tuple(tuples)
 
-##to index a position you must index the grid like this "grid[3][4]" then multiply by adding the positions together
-## Note: "Addition Step" coming soon
-##-- this will return the 4th element in the 3rd tuple within the tuple named "grid"
-## Note this take a few minutes to import but makes multiplication very fast
-
+def multiplyNum(number):
+    N = 115792089237316195423570985008687907852837564279074904382605163141518161494337
+    array = ((number)%N).to_bytes(32, "little")       
+    list = []
+    for byte in array:
+        BBB = int(((hex(byte)))[2:], 16)
+        list.append(BBB)
+    tupleNumber = (tuple(list))
+    posList = []
+    for iteration, place in enumerate(tupleNumber):
+        position = (grid[iteration][place])
+        if position == 0:
+            pass
+        else:
+            posList.append(position)
+    tuplePos = tuple(posList)
+    total = tuplePos[0]
+    if len(tuplePos) < 1:
+        print("Zero aks Infinity")
+        exit()
+    elif len(tuplePos) < 2:
+        print(total)
+        exit()
+    else:
+        for k in tuplePos[1:]:
+            total = total + k
+    print(total)
+    exit()
+multiplyNum(115792089237316195423570985008687907852837564279074904382605163141518161494336)
 
 
