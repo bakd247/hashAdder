@@ -52,7 +52,7 @@ def multiplyNum(number):
     tuplePos = tuple(posList)
     total = tuplePos[0]
     if len(tuplePos) < 1:
-        print("Zero aks Infinity")
+        print("Infinity and Beyond")
         exit()
     elif len(tuplePos) < 2:
         print(total)
