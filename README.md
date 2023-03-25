@@ -27,6 +27,8 @@ instead of adding up the binary positions of a key according to the binary of th
 the tinyEC version is used in combiantion with the multiplyNum.py file to construct a "byte array" lookup table....reducing the complexity of each
 multiplication to (Theta(log32(n//2))) from (Theta(log2(n//2))) for all keys by reducing the number of additions from 255 down to 31...
 
+This is now complete and can be used by importing the method into a virtual environment or by just using the multiplyNum() function at the end of the file with the number you would like to use as a multiple / private Key...
+
 The idea is to use tuples as dictionaries to ensure the fastest possible lookup time as a result.
 And to show that by taking a multiple(number the publicKey is to be multiplied by) and changing it to a 32 byte array...the elements in this array
 can then be looked up according to the iteration in the array and dictionary respectively.
