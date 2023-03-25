@@ -51,4 +51,6 @@ which is the mainpremise that the hashAdder version is derived from...
 you can see it here:
 https://github.com/bakd247/ecdsaKeyFinder
 
+Note: you must have tinEC.py preinstalled to use this tool
+
 Thank You
