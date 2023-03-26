@@ -50,18 +50,22 @@ def multiplyNum(number):
         else:
             posList.append(position)
     tuplePos = tuple(posList)
-    total = tuplePos[0]
+    
     if len(tuplePos) < 1:
         print("Infinity and Beyond")
-        exit()
-    elif len(tuplePos) < 2:
-        print(total)
-        exit()
+        
     else:
-        for k in tuplePos[1:]:
-            total = total + k
-    print(total)
-    exit()
+        total = tuplePos[0]
+        if len(tuplePos) < 2:
+            print(total)
+            
+        else:
+            for k in tuplePos[1:]:
+                total = total + k
+            print(total)
+        
 multiplyNum(115792089237316195423570985008687907852837564279074904382605163141518161494336)
-
+multiplyNum(1)
+multiplyNum(115792089237316195423570985008687907852837564279074904382605163141518161494337)
+multiplyNum(0)
 
