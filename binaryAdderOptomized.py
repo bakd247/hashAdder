@@ -16,7 +16,7 @@ pubKey = curve.g*1
 bits = []
 
 for bitPosition in trange(256,total=256,ascii=True,ncols=100,colour='#00ff00',unit='Row',desc='Creating Key LookUp Table...Please Wait:'):
-    bit = pubKey+pubKey
+    bit = pubKey + pubKey
     bits.append(bit)
     pubKey = bit
 tupleBits = tuple(bits)
