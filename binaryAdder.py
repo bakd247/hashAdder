@@ -20,9 +20,6 @@ for bitPosition in trange(256,total=256,ascii=True,ncols=100,colour='#00ff00',un
     bits.append(bit)
 tupleBits = tuple(bits)
 
-
-
-    
 def multiplyNum(number):
     additionList = []
     N = 115792089237316195423570985008687907852837564279074904382605163141518161494337
