@@ -1,7 +1,6 @@
 from tqdm import tqdm, trange
 from tinyec.ec import SubGroup, Curve
 
-
 name = 'secp256k1'
 p = 0xfffffffffffffffffffffffffffffffffffffffffffffffffffffffefffffc2f
 n = 0xfffffffffffffffffffffffffffffffebaaedce6af48a03bbfd25e8cd0364141
@@ -12,6 +11,8 @@ h = 1
 
 curve = Curve(a, b, SubGroup(p, g, n, h), name)
 pubKey = curve.g*1
+
+#Create Grid
 
 numList = []
 for bytePosition in trange(32,total=32,ascii=True,ncols=100,colour='#00ff00',unit='Row',desc='Creating Key LookUp Table...Please Wait:'):
@@ -32,6 +33,7 @@ for tupNum in numList:
     finalList.append(subList)   
 grid = tuple(finalList)
 
+#Multiply Key By Number By Looking Up in Grid and Adding together the positions according to the index
 
 def multiplyNum(number):
     N = 115792089237316195423570985008687907852837564279074904382605163141518161494337
@@ -62,5 +64,5 @@ def multiplyNum(number):
             for k in tuplePos[1:]:
                 total = total + k
             print(total)
-        
+#Sample multiplyNum() function
 multiplyNum(115792089237316195423570985008687907852837564279074904382605163141518161494336)
