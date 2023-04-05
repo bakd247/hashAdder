@@ -1,6 +1,7 @@
 from tqdm import tqdm, trange
 from tinyec.ec import SubGroup, Curve
 
+# List parameters for ecdsa Curve
 
 name = 'secp256k1'
 p = 0xfffffffffffffffffffffffffffffffffffffffffffffffffffffffefffffc2f
@@ -12,6 +13,8 @@ h = 1
 
 curve = Curve(a, b, SubGroup(p, g, n, h), name)
 pubKey = curve.g*1
+
+# Create 32 powers of 256
 
 numList = []
 for bytePosition in trange(32,total=32,ascii=True,ncols=100,colour='#00ff00',unit='Row',desc='Creating Key LookUp Table...Please Wait:'):
@@ -35,6 +38,7 @@ for tupNum in tupleNumList:
     finalList.append(subList)   
 grid = tuple(finalList)
 
+# Use the above grid to lookup each byte and add them all together
 
 def multiplyNum(number):
     N = 115792089237316195423570985008687907852837564279074904382605163141518161494337
@@ -66,4 +70,6 @@ def multiplyNum(number):
                 total = total + k
             print(total)
         
+# Resulting in a much faster output times for each multiply result
+
 multiplyNum(115792089237316195423570985008687907852837564279074904382605163141518161494336)
