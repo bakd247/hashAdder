@@ -1,7 +1,10 @@
 # hashAdder
 An Optimized ECDSA Private Key Finding Tool
 
-Please note that the code listed in these files is just a preview of the current algorithm currently being written to show the methods that 
+Please See byteAdderOptimized.py for the current multiplication method (very fast ecdsa Module) and hashAdder.py for the current storage method(store by first digit)
+Please also note that the final release is expected to be complete by the end of April 2023...hopefully sooner...any questions...please send me a message.
+
+The code listed in these files is just a preview of the current algorithm currently being written to show the methods that 
 allow for the reduction of complexity as well as much much faster run times compared ecdsaKeyFinder.
 
 Note that in order to multiply a public key when the private key is NOT known...replacing the x and y coordinates in the ecdsaModule.py file...
