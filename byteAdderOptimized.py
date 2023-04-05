@@ -17,12 +17,14 @@ pubKey = curve.g*1
 # Create 32 powers of 256
 
 numList = []
-for bytePosition in trange(32,total=32,ascii=True,ncols=100,colour='#00ff00',unit='Row',desc='Creating Key LookUp Table...Please Wait:'):
-    A = pubKey * (256 ** bytePosition)
-    numList.append(A)
+numList.append(pubKey)
+for bytePosition in trange(31,total=31,ascii=True,ncols=100,colour='#00ff00',unit='Row',desc='Creating Key LookUp Table...Please Wait:'):
+    for bitPosition in range(8):
+        place = pubKey + pubKey
+        pubKey = place
+    numList.append(place)
+    pubKey = pubKey
 tupleNumList = tuple(numList)
-
-# Need to replace above with 32 iteration addition loop @ every 8th iteration
 
 finalList = []
 for tupNum in tupleNumList:
