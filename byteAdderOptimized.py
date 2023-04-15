@@ -18,7 +18,7 @@ pubKey = curve.g*1
 
 numList = []
 numList.append(pubKey)
-for bytePosition in trange(31,total=31,ascii=True,ncols=100,colour='#00ff00',unit='Row',desc='Creating Key LookUp Table...Please Wait:'):
+for bytePosition in range(31):
     for bitPosition in range(8):
         place = pubKey + pubKey
         pubKey = place
@@ -27,7 +27,7 @@ for bytePosition in trange(31,total=31,ascii=True,ncols=100,colour='#00ff00',uni
 tupleNumList = tuple(numList)
 
 finalList = []
-for tupNum in tupleNumList:
+for tupNum in tqdm(tupleNumList,ascii=True,ncols=100,colour='#00ff00',unit='Columns',desc='Rows'):
     subList = []
     zero = 0
     subList.append(zero)
