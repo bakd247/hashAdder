@@ -1,6 +1,15 @@
 # hashAdder
 An Optimized ECDSA Private Key Finding Tool
 
+THis TOOL IS NOT READY YET!!!!
+The above files are just examples to show the method I am using in the newest version....Please Check back later for updates....Hoping to have this ready by June 2023 at the latest as I am currently working on the privateKeyFinder Tool on my other page which is the origional version of this. HashAdder will be an optimized key finding tool that supposrts multiple Keys and very large lists saved to disk with an optimized search method...
+the privateKeyFinder.py tool only supports single keys and stores the lists in memory with basic search queiries....
+they both use lookup tables to make for very fast "hashes per second" but the privateKeyFinder.py version only uses multiples and divisions by 2 where hashAdder uses all combinations of multiples and divisions of 2 and 3 and will supposrt biased 2's or biased 3's...(will be explained in the video)
+
+Please Check Back Periodically for updates...
+Until then please Use this tool if you need to search for a key:
+https://github.com/bakd247/ecdsaKeyFinder
+
 Please See byteAdderOptimized.py for the current multiplication method (very fast ecdsa Module) and hashAdder.py for the current storage method(store by first digit)
 Please also note that the final release is expected to be complete by the end of April 2023...hopefully sooner...any questions...please send me a message.
 
