@@ -1,7 +1,6 @@
 from tinyec.ec import SubGroup, Curve
 from tqdm import tqdm
 # List parameters for ecdsa Curve
-
 name = 'secp256k1'
 p = 0xfffffffffffffffffffffffffffffffffffffffffffffffffffffffefffffc2f
 n = 0xfffffffffffffffffffffffffffffffebaaedce6af48a03bbfd25e8cd0364141
@@ -9,12 +8,9 @@ a = 0x0000000000000000000000000000000000000000000000000000000000000000
 b = 0x0000000000000000000000000000000000000000000000000000000000000007
 g = (0x79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798, 0x483ada7726a3c4655da4fbfc0e1108a8fd17b448a68554199c47d08ffb10d4b8)
 h = 1
-
 curve = Curve(a, b, SubGroup(p, g, n, h), name)
 pubKey = curve.g*1
-
-# Create 16 powers of 65536 as a lookup table
-
+# Create 16 powers of 65536
 numList = []
 numList.append(pubKey)
 for bytePosition in range(15):
@@ -24,7 +20,6 @@ for bytePosition in range(15):
     numList.append(place)
     pubKey = pubKey
 tupleNumList = tuple(numList)
-
 finalList = []
 for tupNum in tqdm(tupleNumList,ascii=True,ncols=100,colour='#00ff00',unit='Columns',desc='Rows'):
     subList = []
@@ -38,9 +33,7 @@ for tupNum in tqdm(tupleNumList,ascii=True,ncols=100,colour='#00ff00',unit='Colu
         position1 = position2
     finalList.append(subList)   
 grid = tuple(finalList)
-
 ##Define Multiply Function
-
 def multiplyNum(number):
     N = 115792089237316195423570985008687907852837564279074904382605163141518161494337
     ##Read in the integer input as big endian hex 4 hex digits at a time
@@ -67,18 +60,15 @@ def multiplyNum(number):
     ##The positions are added to a list to be added together accounting for zeros along the way    
     if len(tuplePos) < 1:
         print("Infinity and Beyond")
-        
     else:
         total = tuplePos[0]
         if len(tuplePos) < 2:
-            print(total)
-            
+            print(total)            
         else:
             for k in tuplePos[1:]:
                 total = total + k
             print(total)
 ##The result is exactly the same as any binary addition but this acheives the same result using a maximum of 15 additions per operation
-##Where 256 bit binary addition takes 255 addition steps maximum...
-##so this is an exact 17 X speed increase per operation
+##Where 256 bit binary addition takes 255 addition steps maximum...so this is an exact 17 X speed increase per operation
 multiplyNum(115792089237316195423570985008687907852837564279074904382605163141518161494336)
 multiplyNum(1)
