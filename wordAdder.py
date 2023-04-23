@@ -77,6 +77,7 @@ def multiplyNum(number):
                 total = total + k
             print(total)
 ##The result is exactly the same as any binary addition but this acheives the same result using a maximum of 15 additions per operation
-##Where 256 bit binary addition takes 255 addition steps maximum...so this is an exact 17 X speed increase per operation
+##Where 256 bit binary addition takes 255 addition steps maximum...
+##so this is an exact 17 X speed increase per operation
 multiplyNum(115792089237316195423570985008687907852837564279074904382605163141518161494336)
 multiplyNum(1)
