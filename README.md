@@ -10,7 +10,7 @@ Please Check Back Periodically for updates...
 Until then please Use this tool if you need to search for a key:
 https://github.com/bakd247/ecdsaKeyFinder
 
-Please See byteAdderOptimized.py for the current multiplication method (very fast ecdsa Module) and hashAdder.py for the current storage method(store by first digit)
+Please See wordAdder.py for the current multiplication method (very fast ecdsa Module) and hashAdder.py for the current storage method(store by first digit)
 Please also note that the final release is expected to be complete by the end of April 2023...hopefully sooner...any questions...please send me a message.
 
 The code listed in these files is just a preview of the current algorithm currently being written to show the methods that 
@@ -37,7 +37,7 @@ The ecdsaModule.py file is the a basic ecdsa implementation that uses the tinyEC
 instead of adding up the binary positions of a key according to the binary of the multiple like the "tinyEC" library does...
 
 the tinyEC version is used in combiantion with the multiplyNum.py file to construct a "byte array" lookup table....reducing the complexity of each
-multiplication to (Theta(log(base_256)*(n//2))) from (Theta(log2*(n//2))) for all keys by reducing the number of additions from 255 down to 31...
+multiplication to (Theta(log(base_65536)*(n//2))) from (Theta(log2*(n//2))) for all keys by reducing the number of additions from 255 down to 15...
 
 This is now complete and can be used by importing the method into a virtual environment or by just using the multiplyNum() function at the end of the file with the number you would like to use as a multiple / private Key...
 
