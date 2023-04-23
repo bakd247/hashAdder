@@ -52,7 +52,8 @@ def multiplyNum(number):
         element = (hex(array[counter])[2:])+(hex(array[counter+1])[2:])
         hexLists.append(element)
         counter += 2
-    ##Then Reverse the "words" to be looked up using the grid above
+    ##Then Reverse the "words" to be looked up
+    ## Then using the grid above...lookup each "hex Word""
     hexLists.reverse()
     tupleHexList = tuple(hexLists)
     for itered, product in enumerate(tupleHexList):
