@@ -58,11 +58,8 @@ please check out the youtube channel which explains all of this code as well as 
 
 https://www.youtube.com/@quitethecontrary1846
 
-If you would like to use the current version (very slow and gives wrong number of keys per second but is still an effective way to search for a key)
+If you would like to use the current version (linked above as ecdsaKeyFinder)
 which is the mainpremise that the hashAdder version is derived from...
-
-you can see it here:
-https://github.com/bakd247/ecdsaKeyFinder
 
 Note: you must have tinEC.py preinstalled to use this tool
 
