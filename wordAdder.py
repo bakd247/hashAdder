@@ -13,7 +13,7 @@ h = 1
 curve = Curve(a, b, SubGroup(p, g, n, h), name)
 pubKey = curve.g*1
 
-# Create 16 powers of 65536
+# Create 16 powers of 65536 as a lookup table
 
 numList = []
 numList.append(pubKey)
@@ -39,8 +39,11 @@ for tupNum in tqdm(tupleNumList,ascii=True,ncols=100,colour='#00ff00',unit='Colu
     finalList.append(subList)   
 grid = tuple(finalList)
 
+##Define Multiply Function
+
 def multiplyNum(number):
     N = 115792089237316195423570985008687907852837564279074904382605163141518161494337
+    ##Read in the integer input as big endian hex 4 hex digits at a time
     array = ((number)%N).to_bytes(32, "big")
     counter = 0
     hexLists = []
@@ -49,16 +52,18 @@ def multiplyNum(number):
         element = (hex(array[counter])[2:])+(hex(array[counter+1])[2:])
         hexLists.append(element)
         counter += 2
+    ##Then Reverse the "words" to be looked up using the grid above
     hexLists.reverse()
     tupleHexList = tuple(hexLists)
     for itered, product in enumerate(tupleHexList):
         position = (grid[itered][(int(product, 16))])
+        ##Each position is looked up according to its index, and each "hex word" is converted to an integer to give its index
         if position == 0:
             pass
         else:
             posList.append(position)
         tuplePos = tuple(posList)
-        
+    ##The positions are added to a list to be added together accounting for zeros along the way    
     if len(tuplePos) < 1:
         print("Infinity and Beyond")
         
@@ -71,6 +76,7 @@ def multiplyNum(number):
             for k in tuplePos[1:]:
                 total = total + k
             print(total)
-
+##The result is exactly the same as any binary addition but this acheives the same result using a maximum of 15 additions per operation
+##Where 256 bit binary addition takes 255 addition steps maximum...so this is an exact 17 X speed increase per operation
 multiplyNum(115792089237316195423570985008687907852837564279074904382605163141518161494336)
 multiplyNum(1)
