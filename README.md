@@ -61,6 +61,6 @@ https://www.youtube.com/@quitethecontrary1846
 If you would like to use the current version (linked above as ecdsaKeyFinder)
 which is the mainpremise that the hashAdder version is derived from...
 
-Note: you must have tinEC.py preinstalled to use this tool
+Note: you must have tinyEC.py preinstalled to use this tool
 
 Thank You
