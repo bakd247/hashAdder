@@ -2,6 +2,10 @@
 An Optimized ECDSA Private Key Finding Tool
 
 This TOOL IS NOT READY YET!!!!
+
+Currently the hashAdder.py file just multiplies and divides by 2 and 3 for the number of iterations input by the user and organizes the public Key x-coordinate results by the first 2 digits.
+this allows for much larger collision lists to exsist while only having to search the keys that have the same prefix.
+
 The above files are just examples to show the method I am using in the newest version....Please Check back later for updates....Hoping to have this ready by June 2023 at the latest as I am currently working on the privateKeyFinder.py Tool on my other page which is the origional version that inspired hashAdder. HashAdder will be an optimized key finding tool that supposrts multiple Keys and very large lists saved to disk with an optimized search method...(which uses key prefix to allow for fast lookups), on the other hand...
 the privateKeyFinder.py tool only supports single keys and stores the lists in memory with basic search queiries....
 they both use lookup tables to make for very fast "hashes per second" but the privateKeyFinder.py version only uses multiples and divisions by 2 where hashAdder uses all combinations of multiples and divisions of 2 and 3 and will supposrt biased 2's or biased 3's...(will be explained in the video)
