@@ -37,20 +37,42 @@ print("This is the Key you entered in base 10 integer format:",pubKeyResult)
 AA = int(input("Please Enter the Size of the Collision List you would like to Create. Best Performance around 10,000:"))
 print("Creating Lookup table...Please Wait...")
 from wordAdder import multiplyNum
-numList = []
+
 half = 57896044618658097711785492504343953926418782139537452191302581570759080747169
 N = 115792089237316195423570985008687907852837564279074904382605163141518161494337
 AAA = (AA*2)
 startPubKey = pubKeyResult * ((half ** AA)%N)
 print("Creating Collision List...Please Wait...")
-for numberList in range(AAA):
-    multList = []
-    numList.append(multList)
-for numberedList in numList:
-    Place = startPubKey + startPubKey
-    numberedList.append(Place)
+numList = []
+for numberList in range(90):
+    prefixList = []
+    prefixList.append(int(str(numberList)[:2])+10)
+    numList.append(prefixList)
+for numberedList in range(AAA):
+    positionList = []
+    Place1 = startPubKey + startPubKey
+    positionList.append(Place1.x)
+    positionList.append(0)
+    positionList.append(numberedList)
+    for numedList in numList:
+        if numedList[0] != int(str(Place1.x)[:2]):
+            pass
+        else:
+            numedList.append(positionList)
+    Place2 = Place1
     for mult in range(AAA):
-        multPlace = Place + Place + Place
-        numberedList.append(multPlace)
-    startPubKey = Place
-print(numList)
+        multList = []
+        multPlace = Place2 + Place2 + Place2
+        multList.append(multPlace.x)
+        multList.append(numberedList)
+        multList.append(mult)
+        for numedList in numList:
+            if numedList[0] != int(str(multPlace.x)[:2]):
+                pass
+            else:
+                numedList.append(multList)
+        Place2 = multPlace
+    startPubKey = Place1
+tupleNumedList = tuple(numedList)
+tupleNumList = tuple(numList)
+print(tupleNumList)
