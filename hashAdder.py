@@ -70,5 +70,10 @@ for numberedList in range(AAA):
                 numedList.append(tupleMultList)
         Place2 = multPlace
     startPubKey = Place1
-tupleNumList = tuple(numList)
+
+newNumList = []
+for numed in numList:
+    tupleNum = tuple(numed)
+    newNumList.append(tupleNum)
+tupleNumList = tuple(newNumList)
 print(tupleNumList)
