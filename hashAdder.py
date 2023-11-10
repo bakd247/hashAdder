@@ -1,5 +1,6 @@
 from tinyec.ec import SubGroup, Curve
 from tqdm import tqdm, trange
+from os import urandom
 print("                                                  ")
 print("                                                  ")
 print("\033[0;32m _               _        _       _     _\033[00m")
@@ -70,10 +71,11 @@ for numberedList in range(AAA):
                 numedList.append(tupleMultList)
         Place2 = multPlace
     startPubKey = Place1
-
+numList.sort()
 newNumList = []
 for numed in numList:
     tupleNum = tuple(numed)
     newNumList.append(tupleNum)
 tupleNumList = tuple(newNumList)
 print(tupleNumList)
+
