@@ -1,6 +1,7 @@
 from tinyec.ec import SubGroup, Curve
 from tqdm import tqdm, trange
 from os import urandom
+from binarySearch import binarySearch
 print("                                                  ")
 print("                                                  ")
 print("\033[0;32m _               _        _       _     _\033[00m")
@@ -28,54 +29,50 @@ def createKey(XX,YY):
         curve = Curve(a, b, SubGroup(p, g, n, h), name)
         pubKey= curve.g*1
         return(pubKey)
-enteredPubKey = createKey(XX,YY)
 pubKeyResult = createKey(XX,YY)
 print("This is the Key you entered in base 10 integer format:",pubKeyResult)
 AA = int(input("Please Enter the Size of the Collision List you would like to Create. Best Performance around 10,000:"))
 print("Creating Lookup table...Please Wait...")
-from wordAdder import multiplyNum
+from byteAdder import multiplyNum
 half = 57896044618658097711785492504343953926418782139537452191302581570759080747169
 N = 115792089237316195423570985008687907852837564279074904382605163141518161494337
-AAA = (AA*2)
-startPubKey = pubKeyResult * ((half ** AA)%N)
+third = 77194726158210796949047323339125271901891709519383269588403442094345440996225
+AAA = (AA**2)
+twosStartPubKey = pubKeyResult * ((half ** (AA))%N)
 print("Creating Collision List...Please Wait...")
+
 numList = []
 for numberList in range(90):
     prefixList = []
     prefixList.append(int(str(numberList)[:2])+10)
     numList.append(prefixList)
+
+twosPositionList = []
 for numberedList in range(AAA):
-    positionList = []
-    Place1 = startPubKey + startPubKey
-    positionList.append(Place1.x)
-    positionList.append(0)
-    positionList.append(numberedList)
-    tuplePositionList = tuple(positionList)
-    for numedList in numList:
-        if numedList[0] != int(str(Place1.x)[:2]):
-            pass
-        else:
-            numedList.append(tuplePositionList)
-    Place2 = Place1
-    for mult in range(AAA):
-        multList = []
-        multPlace = Place2 + Place2 + Place2
-        multList.append(multPlace.x)
-        multList.append(numberedList)
-        multList.append(mult)
-        tupleMultList = tuple(multList)
+    Place1 = twosStartPubKey + twosStartPubKey
+    twosPositionList.append(Place1)
+    twosStartPubKey = Place1
+
+threesList = []
+for twosPlace, twoPosition in enumerate(twosPositionList):
+    thirdStartPlace = twoPosition * (third ** AA)
+    for thirdMultiple in range(AAA):
+        thirdPlaceList = []
+        thirdPlace = thirdStartPlace + thirdStartPlace + thirdStartPlace
+        thirdPlaceList.append(thirdPlace.x)
+        thirdPlaceList.append(twosPlace+1)
+        thirdPlaceList.append(thirdMultiple+1)
+        tupleThirdPlaceList = tuple(thirdPlaceList)
         for numedList in numList:
-            if numedList[0] != int(str(multPlace.x)[:2]):
+            if numedList[0] != int(str(thirdPlace.x)[:2]):
                 pass
             else:
-                numedList.append(tupleMultList)
-        Place2 = multPlace
-    startPubKey = Place1
-numList.sort()
-newNumList = []
-for numed in numList:
-    tupleNum = tuple(numed)
-    newNumList.append(tupleNum)
-tupleNumList = tuple(newNumList)
-print(tupleNumList)
-
+                numedList.append(tupleThirdPlaceList)
+        thirdStartPlace = thirdPlace
+newList = []        
+for listedPrefix in numList:
+    tupleListedPrefix = tuple(listedPrefix)
+    newList.append(tupleListedPrefix)
+newList.sort()
+tupleNewList = tuple(newList)
+print(tupleNewList) 
