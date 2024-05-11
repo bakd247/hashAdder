@@ -44,8 +44,11 @@ print("Creating Collision List...Please Wait...")
 numList = []
 for numberList in range(90):
     prefixList = []
-    prefixList.append(int(str(numberList)[:2])+10) 
-    numList.append(prefixList)
+    prefixFindList = []
+    prefixList.append(int(str(numberList)[:2])+10)
+    tuplePrefixList = tuple(prefixList) 
+    prefixFindList.append(tuplePrefixList)
+    numList.append(prefixFindList)
 twosPositionList = []
 for numberedList in range(AAA):
     Place1 = twosStartPubKey + twosStartPubKey
@@ -65,13 +68,11 @@ for twosPlace, twoPosition in enumerate(twosPositionList):
         thirdPlaceList.append(tupleIndicatorList)
         tupleThirdPlaceList = tuple(thirdPlaceList)
         for numedList in numList:
-            if numedList[0] != int(str(thirdPlace.x)[:2]):
+            if numedList[0][0] != int(str(thirdPlace.x)[:2]):
                 pass                                            
             else:
                 numedList.append(tupleThirdPlaceList)
-        thirdStartPlace = thirdPlace
-for numberedList in numList:
-    numberedList[0] = tuple(numberedList)
+        thirdStartPlace = thirdPlace   
 sortedPrefixList = []
 for numsListed in numList:
     sortedList = sorted(numsListed)
