@@ -2,7 +2,7 @@ from tinyec.ec import SubGroup, Curve
 from tqdm import tqdm, trange
 from os import urandom
 from binarySearch import binarySearch
-from operator import itemgetter
+import time
 print("                                                  ")
 print("                                                  ")
 print("\033[0;32m _               _        _       _     _\033[00m")
@@ -57,22 +57,20 @@ for numberedList in range(AAA):
 threesList = []
 for twosPlace, twoPosition in enumerate(twosPositionList):
     thirdStartPlace = twoPosition * (third ** AA)
-    for thirdMultiple in range(AAA):
-        thirdPlaceList = []
-        indicatorList = []
-        thirdPlace = thirdStartPlace + thirdStartPlace + thirdStartPlace
-        thirdPlaceList.append(thirdPlace.x)
-        indicatorList.append((twosPlace+1)-AA)
-        indicatorList.append((thirdMultiple+1)-AA)
-        tupleIndicatorList = tuple(indicatorList)
-        thirdPlaceList.append(tupleIndicatorList)
-        tupleThirdPlaceList = tuple(thirdPlaceList)
-        for numedList in numList:
-            if numedList[0][0] != int(str(thirdPlace.x)[:2]):
-                pass                                            
-            else:
-                numedList.append(tupleThirdPlaceList)
-        thirdStartPlace = thirdPlace   
+for thirdMultiple in range(AAA):
+    thirdPlaceList = []
+    indicatorList = []
+    thirdPlace = thirdStartPlace + thirdStartPlace + thirdStartPlace
+    thirdPlaceList.append(thirdPlace.x)
+    indicatorList.append((twosPlace+1)-AA)
+    indicatorList.append((thirdMultiple+1)-AA)
+    tupleIndicatorList = tuple(indicatorList)
+    thirdPlaceList.append(tupleIndicatorList)
+    tupleThirdPlaceList = tuple(thirdPlaceList)
+    thirdPrefix = (int(str(thirdPlace.x)[:2]))-10
+    numList[thirdPrefix].append(tupleThirdPlaceList)
+    thirdStartPlace = thirdPlace
+print("Sorting Prefix Lists, Please Wait...")
 sortedPrefixList = []
 for numsListed in numList:
     sortedList = sorted(numsListed)
