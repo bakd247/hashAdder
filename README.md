@@ -31,6 +31,8 @@ please check out the youtube channel which explains all of this code as well as 
 
 https://www.youtube.com/@quitethecontrary1846
 
+Video showing hashAdder in action as well as a detailed explaination of how it works comming to the youTube channel soon...
+
 If you would like to use the current version (linked above as ecdsaKeyFinder)
 which is the mainpremise that the hashAdder version is derived from...
 
