@@ -1,62 +1,28 @@
 # hashAdder
 An Optimized ECDSA Private Key Finding Tool
 
-This TOOL IS NOT READY YET!!!!
+THIS TOOL IS FINALLY READY AND WORKING!!!!
 
-Currently the hashAdder.py file just multiplies and divides by 2 and 3 for the number of iterations input by the user and organizes the public Key x-coordinate results by the first 2 digits.
+Currently the hashAdder.py file just multiplies and divides by 2 and 3 for the number of iterations input by the user and organizes the public Key x-coordinate results by the first 4 digits.
 this allows for much larger collision lists to exsist while only having to search the keys that have the same prefix.
 
-The above files are just examples to show the method I am using in the newest version....Please Check back later for updates....Hoping to have this ready by November / December of 2023 at the latest as I am currently working on the privateKeyFinder.py Tool on my other page which is the origional version that inspired hashAdder. HashAdder will be an optimized key finding tool that supposrts multiple Keys and very large lists saved to disk with an optimized search method...(which uses key prefix to allow for fast lookups), on the other hand...
-the privateKeyFinder.py tool only supports single keys and stores the lists in memory with basic search queiries....
-they both use lookup tables to make for very fast "hashes per second" but the privateKeyFinder.py version only uses multiples and divisions by 2 where hashAdder uses all combinations of multiples and divisions of 2 and 3 and will supposrt biased 2's or biased 3's...(will be explained in the video)
-
-Please Check Back Periodically for updates...
-Until then please Use this tool if you need to search for a key:
-https://github.com/bakd247/ecdsaKeyFinder
-
-Please See wordAdder.py for the current multiplication method (very fast ecdsa Module) and hashAdder.py for the current storage method(store by first digit)
-
-The code listed in these files is just a preview of the current algorithm currently being written to show the methods that 
-allow for the reduction of complexity as well as much much faster run times compared ecdsaKeyFinder.
+Please See wordAdder.py for the current multiplication method (very fast ecdsa Module) and hashAdder.py for the current storage method(store by first four digits)
 
 the tinyEC version is used in combiantion with the multiplyNum.py file to construct a "byte array" lookup table....reducing the complexity of each
 multiplication to (Theta(log(base_65536)*(n//2))) from (Theta(log2*(n//2))) for all keys by reducing the number of additions from 255 down to 15...
 
 This is an exact 17 X speed increase per operation using this addition loop (base 65536) compared to a regular binary(base2) addition loop that is used by default...
 
-Note that in order to multiply a public key when the private key is NOT known...any public key can be multiplied by an integer....
-secp256k1 spcifically uses integer multiples as private keys  and ALL public keys are a resulting multple of the origional generator point x,y coordinates...
-PRIVATE KEYS ARE INTEGER SCALERS AND PUBLIC KEYS ARE OPINTS WITH X AND Y COORDINATES!!!
-
-(origional generator = (x = 79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798, y = 483ada7726a3c4655da4fbfc0e1108a8fd17b448a68554199c47d08ffb10d4b8))
-(Can be confirmed with any ecdsa Library)
-(in order to multiply an unknown key...the above x and y coordinates are replaced with the public key in question)
-
-"unknown key"= a key which the private key is NOT known and is to be recovered using this tool
-aka a base 10 number between 1 and 115792089237316195423570985008687907852837564279074904382605163141518161494337
-
-n = 115792089237316195423570985008687907852837564279074904382605163141518161494337
-
-"n-1" is the largest possible ECDSA private key and "1" is the smallest
-
-The fileCreator.py file is the method for creating files to store the keys accoriding to the first 4 digits of the x-coordinate...
-(The Finding algorithm will use suffixes and each file will be sorted in accending order to allow for a reducion to the search space for each search try)
-The ecdsaModule.py file is the a basic ecdsa implementation that uses the tinyEC library to create public keys...
-instead of adding up the binary positions of a key according to the binary of the multiple like the "tinyEC" library does...
-
-This is now complete and can be used by importing the method into a virtual environment or by just using the multiplyNum() function at the end of the file with the number you would like to use as a multiple / private Key...
-
-The idea is to use tuples as dictionaries to ensure the fastest possible lookup time as a result.
+The idea of hashAdder is to use tuples as dictionaries to ensure the fastest possible lookup time as a result. While providing every multiple of 2 and 3 to increase the key search space size.
 And to show that by taking a multiple(number the publicKey is to be multiplied by) and changing it to a 32 byte array...the elements in this array
 can then be looked up according to the iteration in the array and dictionary respectively.
 The hashAdder.py file is the method for storing the keys to give a status bar as well...mostly used for benchmarking
 
-The intentionis to use both multithreading and multiprocessing in order to calculate all of the multiples of 2 and 3 as well as all of the 
+The intention with the next release is to use both multithreading and multiprocessing in order to calculate all of the multiples of 2 and 3 as well as all of the 
 divisions of 2 and 3....
 
-Once the keys are save to file in an organized and "quick search" fashion
-the program will then search for a match using random numbers multipled by the original generator x and y ((x = 79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798, y = 483ada7726a3c4655da4fbfc0e1108a8fd17b448a68554199c47d08ffb10d4b8))
-only ONE match is needed to recover ANY key...
+All Collision Lists are currently Saved to memory and must be recreated everytime the software is run. Version 2.0 intends to solve this by writeing collision lists to file and reading to memory at start.
+Version 2.0 will also supoport multiple keys and thier multiples. The current version only looks for 1 key along with its multiples
 
 please check out the youtube channel which explains all of this code as well as much more "Math behind Bitcoin's ECDSA Algorithm" videos.
 
@@ -66,5 +32,6 @@ If you would like to use the current version (linked above as ecdsaKeyFinder)
 which is the mainpremise that the hashAdder version is derived from...
 
 Note: you must have tinyEC.py preinstalled to use this tool
+Download the files into a sinlge folder which contains all of the files listed above. Then run the program using python 3 and follow the prompts.
 
 Thank You
