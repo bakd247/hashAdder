@@ -42,6 +42,7 @@ third = 771947261582107969490473233391252719018917095193832695884034420943454409
 twosStartPubKey = pubKeyResult * ((half ** (AA))%N)
 print("Creating Collision List...Please Wait...")
 print("Total Number of Keys Contained In Collision List:", (AAA ** 2))
+print("Please wait until the Below counter gets to:", AAA)
 numList = []
 for numberList in range(90000):
     prefixList = []
