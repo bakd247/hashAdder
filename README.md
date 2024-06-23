@@ -17,8 +17,7 @@ multiplication to (Theta(log(base_65536)*(n//2))) from (Theta(log2*(n//2))) for 
 
 This is an exact 17 X speed increase per operation using this addition loop (base 65536) compared to a regular binary(base2) addition loop that is used by default...
 
-The idea of hashAdder is to use tuples as dictionaries to ensure the fastest possible lookup time as a result. While providing every multiple of 2 and 3 to increase the key search space size.
-And to show that by taking a multiple(number the publicKey is to be multiplied by) and changing it to a 32 byte array...the elements in this array
+The idea of hashAdder is to use tuples as dictionaries to ensure the fastest possible lookup time as a result. While providing every multiple of 2 and 3 to increase the key search space size and to show that by taking a multiple(number the publicKey is to be multiplied by) and changing it to a 32 byte array...the elements in this array
 can then be looked up according to the iteration in the array and dictionary respectively.
 The hashAdder.py file is the method for storing the keys to give a status bar as well...mostly used for benchmarking
 
