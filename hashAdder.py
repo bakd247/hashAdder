@@ -123,5 +123,5 @@ while KeyFound != True:
                 prefix = int(str(keyToFind)[:4])
                 privateKey1 = privateKey1 + 1
     elapsed_time = time.time() - t
-    print("Average Random Key Strings Created and Searched Per Second",(200001//elapsed_time))
+    print("Average Random Key Strings Created and Searched Per Second",(20000//elapsed_time))
     print("Average Seconds per Round ", elapsed_time)
