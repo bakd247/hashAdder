@@ -33,8 +33,8 @@ https://www.youtube.com/@quitethecontrary1846
 
 Video showing hashAdder in action as well as a detailed explaination of how it works comming to the youTube channel soon...
 
-If you would like to use the current version (linked above as ecdsaKeyFinder)
-which is the mainpremise that the hashAdder version is derived from...
+Please download the first release of hashAdder 1.0 and run hashAdder.py using python3 from the command line / terminal
+NOTE: do not run within virtual environments such as within visual studio. this Causes memory error after running for a long time. In order for the program to run for a long enough time to ever hope to find a key you MUST run the program contained in its own VM or from a terminal. Admin privledges should not be required but are recomended to best use of hardware resources.
 
 Note: you must have tinyEC.py preinstalled to use this tool
 Download the files into a sinlge folder which contains all of the files listed above. Then run the program using python 3 and follow the prompts.
