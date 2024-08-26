@@ -86,8 +86,8 @@ KeyFound = False
 print("Searching...Please wait...")
 while KeyFound != True:
     t = time.time()
-    #privKey = (int((((urandom(32))[2:])).hex(), 16))%N
-    privKey = 19624716410798423420468368083813728604159652301528221199333507958458170899451            #Comment Out previous private key and replace this one with a known private key for testing.
+    privKey = (int((((urandom(32))[2:])).hex(), 16))%N
+    #privKey = 19624716410798423420468368083813728604159652301528221199333507958458170899451            #Comment Out previous private key and replace this one with a known private key for testing.
     privateKey1 = privKey
     keyB = multiplyNum(privateKey1)
     keyG = multiplyNum(1)
