@@ -35,7 +35,7 @@ print("This is the Key you entered in base 10 integer format:",pubKeyResult)
 AA = int(input("Please Enter the Size of the Collision List you would like to Create. NOTE: The number you input will be doubled then squared (Example: input of 100 will OutPut - 40,000 total Keys Contained in the Multiples Collision List)(An input of 500 results in 1 million keys)...Please Consider This and keep your input number below 10,000 for Best Restults. Best Performance around 500...However Larger Nunbers are encouraged:"))
 AAA = (AA * 2)
 print("Creating Lookup table...Please Wait...")
-from wordAdder import multiplyNum
+from byteAdder import multiplyNum
 half = 57896044618658097711785492504343953926418782139537452191302581570759080747169
 N = 115792089237316195423570985008687907852837564279074904382605163141518161494337
 third = 77194726158210796949047323339125271901891709519383269588403442094345440996225
@@ -86,13 +86,14 @@ KeyFound = False
 print("Searching...Please wait...")
 while KeyFound != True:
     t = time.time()
-    #privKey = (int((((urandom(32))[2:])).hex(), 16))%N
-    privKey = 39249432821596846840936736167627457208319304603056442398667015916916341798902            #Comment Out previous private key and replace this one with a known private key for testing.
-    privateKey1 = (privKey - 10000)%N
+    privKey = (int((((urandom(32))[2:])).hex(), 16))%N
+    #privKey = 19624716410798423420468368083813728604159652301528221199333507958458170899451            #Comment Out previous private key and replace this one with a known private key for testing.
+    privateKey1 = privKey
     keyB = multiplyNum(privateKey1)
     keyG = multiplyNum(1)
     keyToFind = keyB.x
     prefix = int(str(keyToFind)[:4])
+    print(prefix)
     for multipleTry in range(10):
         for triedSpot in range(20000):
             hashIteration = tupleOfTupleList[prefix-10000]
@@ -114,6 +115,7 @@ while KeyFound != True:
                     threesResult = 0 - threesResult
                     foundPrivateKey = (privateKey1 * (((2 ** twosResult)*(3 ** threesResult))%N))%N
                 print(result)
+                print(hashIteration)
                 print("This is the Found X-Coordinate:", result[0])
                 print("Your Private Key is:", foundPrivateKey)
                 exit()
