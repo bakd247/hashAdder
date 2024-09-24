@@ -99,7 +99,7 @@ for easyGrid in tqdm(tupleFirstRow,ascii=True,ncols=100,colour='#00ff00',unit='R
             easyPrefix = int(str(easyKeyToFind)[:4])
             privKey1 = (privKey1 + easyGrid) % N
 #Reverse Grid Search...
-print("Checking Lookup Reverse Lookup Grid for Collision Match...Please wait...")
+print("Checking Lookup Grid in Reverse form Half Point for Collision Match...Please wait...")
 for reverseEasyGrid in tqdm(tupleFirstRow,ascii=True,ncols=100,colour='#00ff00',unit='Rows',desc='GridRows'):
     privKeyR = reverseEasyGrid
     reverseTryPlace = multiplyNum((half-reverseEasyGrid)%N)
