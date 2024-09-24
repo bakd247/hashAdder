@@ -1,4 +1,7 @@
 # hashAdder
+
+Version 1.2 is the Most current Working Release...
+
 An Optimized ECDSA Private Key Finding Tool
 
 THIS TOOL IS FINALLY READY AND WORKING!!!!
