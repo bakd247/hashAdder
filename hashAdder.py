@@ -17,7 +17,7 @@ XX = int((input("Please Enter Your Public Key X Coordinate In Hex Format:")),16)
 YY = int((input("Please Enter Your Public Key Y Coordinate In Hex Format:")),16)
 pubKeyResult = createKey(XX,YY)
 print("This is the Key you entered in base 10 integer format:",pubKeyResult)
-AA = int(input("Please Enter the Size of the Collision List you would like to Create. NOTE: The number you input will be doubled then squared (Example: input of 100 will OutPut - 40,000 total Keys Contained in the Multiples Collision List)(An input of 500 results in 1 million keys)...Please Consider This and keep your input number below 10,000 for Best Restults. Best Performance around 500...However Larger Nunbers are encouraged:"))
+AA = int(input("Please Enter the Size of the Collision List you would like to Create. NOTE: The number you input will be doubled then squared (Example: input of 100 will OutPut - 40,000 total Keys Contained in the Multiples Collision List)(An input of 500 results in 1 million keys)...Please Consider This and keep your input number below 23,170 for Best Restults with No Overflow Errors. Best Performance around 500...However Larger Nunbers are encouraged:"))
 AAA = (AA * 2)
 print("Creating Lookup table...Please Wait...")
 #Create Lookup Table Grid...
