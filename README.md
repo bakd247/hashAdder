@@ -6,7 +6,7 @@ An Optimized ECDSA Private Key Finding Tool
 
 THIS TOOL IS FINALLY READY AND WORKING!!!!
 
-Currently the hashAdder.py file multiplies and divides by 2 and 3 for the number of iterations input by the user and organizes the public Key x-coordinate results by the first 4 digits.
+Currently the hashAdder.py file multiplies and divides by 2 and 3 for the number of iterations input by the user and organizes the public Key x-coordinate results by the first 6 digits.
 this allows for much larger collision lists to exsist while only having to search the keys that have the same prefix as well as much faster binary search times per iterative round.
 
 The program will prompt to input a number for the sizxe of the collision list desired. This number will be double and then squared to give a total number of keys contained in the list.
