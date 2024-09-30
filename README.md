@@ -1,6 +1,6 @@
 # hashAdder
 
-Version 1.2 is the Most current Working Release...
+Version 1.3 is the Most current Working Release...
 
 An Optimized ECDSA Private Key Finding Tool
 
