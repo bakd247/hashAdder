@@ -98,7 +98,7 @@ Tuples are used as lookup dictionaries to allow indexing, which gives constant l
 **Running the Program**
 ***********************
 
-Also, the current version requires the user have the "tinyEC.py" package installed on the system or within the same working directory as hashAdder's files using "pip".
+The current version requires the user have the "tinyEC.py" package installed on the system or within the same working directory as hashAdder's files using "pip".
  
 When the program is run, it will ask for a number to be entered for the size of the collision list you would like to create. The number entered is doubled, 1 is added and then that total is squared, (((2*input amount)+1)**2), in order to give a total amount of multiples contained in the list.
 
