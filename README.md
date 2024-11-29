@@ -68,7 +68,7 @@ It is well known that division can be done using multiplication via using decima
 In order to divide by 2, the half position of ((n-((n-1)//2))%n)) is used where:
 half = 57896044618658097711785492504343953926418782139537452191302581570759080747169
 
-In Order to divide by 3 ((n-(n//3))%n) is used:
+In Order to divide by 3, the third position of ((n-(n//3))%n) is used where:
 third = 77194726158210796949047323339125271901891709519383269588403442094345440996225
 
 In order to reverse the iteration of the division by 2, we multiply by the corresponding power of 2...same for 3.
