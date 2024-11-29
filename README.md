@@ -5,6 +5,7 @@ NOTICE:  YOU MUST KNOW HOW TO RUN A PYTHON PROGRAM FROM THE COMMAND LINE / TERMI
 **Over View**
 ************
 Version 1.4 is the Latest Working Release
+
 NOTICE:
 Due to file size limitations of Github...
 You Must download Version 1.4 from the "releases" section as a .zip file in order to avoid creating the Lookup Table at each run time.
