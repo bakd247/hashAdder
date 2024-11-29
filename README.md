@@ -76,11 +76,13 @@ Multiplication and division iterations can all be confirmed using private keys a
 Example:
 (Public Key * 4) / (4) = original Public Key
 
+(Divide by 4 is done using (Public Key *4) * (half ^ 2)
+
 or using the original generator as "1",
 
-Public Key *(2**32)%n="Multiple to be Found"
+Public Key *(2^32)%n="Multiple to be Found"
 (random Key Integer) *(Original Generator) = Matching Public Key to "Multiple to be Found"
-"Found Key" *(half**32)%n= Private Key Recovered From Public Key
+"Found Key" *(half^32)%n= Private Key Recovered From Public Key
 
 *********************************************************************
 **Why is hashAdder Better Than a Typical Password Cracking Program?**
