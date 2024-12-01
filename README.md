@@ -16,7 +16,7 @@ The program uses multiplication, division and exponents to create a large "colli
 
 If you would rather watch a video explaining this program, please visit my YouTube channel here:
 https://www.youtube.com/@quitethecontrary1846
-"Video explaining hashAdder comming Before November 29/30 2024"
+"Video explaining hashAdder (part One now available on YouTube)
 
 This description assumes you have a basic understanding of the math behind bitcoin being modular arithmetic/ "clock math"(Modulo - the remained after division - by some large prime number).
 This is done in python using "%" operator. Example: (10*2)%13=7.
