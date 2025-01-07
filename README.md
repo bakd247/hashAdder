@@ -6,8 +6,8 @@ NOTICE:  YOU MUST KNOW HOW TO RUN A PYTHON PROGRAM FROM THE COMMAND LINE / TERMI
 ************
 Version 1.6 is the Latest Working Release
 
-Version 1.6 is to be run from a Windows Command Prompt...a Linux version is currently being worked on (available as the Next update version 1.7 expected mid January 2025)as Linux and Windows use different prompts to change directories forward and backward.
-I am very sorry for this inconvenience as I was more concered about just getting the code working and uploaded than I was about testing between different operating systems.
+Version 1.6 must be run as Administrator if using Linux Terminal..you must also install "tqdm" and "tinyec" using this command "sudo python3 -m install tinyec tqdm"..then run as root...
+If using Windows you can run as administrator but it is not needed if you give file permissions to the current user.
 
 Note: You may need to run the most recent version from command line / terminal as an administrator in order to create the collisionList files...
 
