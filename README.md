@@ -6,7 +6,7 @@ NOTICE:  YOU MUST KNOW HOW TO RUN A PYTHON PROGRAM FROM THE COMMAND LINE / TERMI
 ************
 Version 1.6 is the Latest Working Release
 
-Note: You may need to run the most recent version from command lone as an administrator in order to create the collisionList files...
+Note: You may need to run the most recent version from command line / terminal as an administrator in order to create the collisionList files...
 
 HashAdder is a python program that allows for the searching of a single key to become searching for many different keys which all correspond mathematically to the single key, which is input by the user.
 The program uses multiplication, division and exponents to create a large "collision list" of keys which drastically reduces the "worst case" time complexity of recovering a private Key.
