@@ -43,6 +43,7 @@ while ListFoundInFile == True:
         else:
             folderToUse = int(folderToUse)
             if checkRange(folderToUse, 0, (len(listToUse))) == True:
+                print("Loading Selected Collision List...Please Wait...This Could Take a Minute...")
                 fileToBeOpened = listToUse[folderToUse-1]
                 os.chdir(fileToBeOpened)
                 curDir = os.getcwd()
@@ -93,7 +94,6 @@ else:
 #EasyGrid Search...
 KeyFound = False
 N = 115792089237316195423570985008687907852837564279074904382605163141518161494337
-print("Searching...Please wait...")
 os.chdir("..")
 os.chdir("..")
 if input("Would Your Like to Skip Lookup table Search? recomended only if you have already tried it on the key in the past and NOT found an answer...Please enter 'y' to Skip or 'n' to run the lookup table Search:") != "y":
