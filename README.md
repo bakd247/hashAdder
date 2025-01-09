@@ -9,7 +9,8 @@ Version 1.6 is the Latest Working Release
 Version 1.6 must be run as Administrator / "Root" if using Linux Terminal..you must also install (as root user) "tqdm" and "tinyec" using this command (sudo python3 -m pip install tinyec tqdm)..then run hashAdder.py as root like this: (sudo python3 hashAdder.py)
 If using Windows you can run as administrator but it is not needed if you give file permissions to the current user.
 
-Note: You may need to run the most recent version from command line / terminal as an administrator in order to create the collisionList files...
+NOTICE:You must run the newest version from its own folder / directory!!! Failure to do so willl result in functionality conflicts and will cause the program to not work properly!!!
+You may need to run the most recent version from command line / terminal as an administrator in order to create the collisionList files...
 
 HashAdder is a python program that allows for the searching of a single key to become searching for many different keys which all correspond mathematically to the single key, which is input by the user.
 The program uses multiplication, division and exponents to create a large "collision list" of keys which drastically reduces the "worst case" time complexity of recovering a private Key.
