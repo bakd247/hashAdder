@@ -2,7 +2,7 @@
 NOTICE:  YOU MUST KNOW HOW TO RUN A PYTHON PROGRAM FROM THE COMMAND LINE / TERMINAL IN ORDER TO USE THIS TOOL!!!
 
 ************
-**Over View and Installation of Prerequisites**
+**Installation of Prerequisites**
 ************
 Version 1.6 is the Latest Working Release and works on both Linux and Windows operating systems.
 To Install the prerequisites using Linux:
@@ -21,6 +21,10 @@ Use the same commands as above from a command prompt (As Administartor) without 
 
 If using Windows you can run as administrator but it is not needed if you give file permissions to the current user.
 You may need to run the most recent version from command line / terminal as an administrator if using Linux or Mac in order to create the collisionList files...
+
+************
+**OverView**
+************
 
 NOTICE:You must run the newest version from its own folder / directory. Failure to do so will result in functionality conflicts between files and will cause the program to not work properly!!!
 
