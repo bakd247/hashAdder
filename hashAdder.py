@@ -82,6 +82,7 @@ else:
     print("Total Number of Keys Contained In Collision List:", totalKeys)
     print("Please wait until the Below counter gets to:", (AAA+1))
     tupleOfTupleList = sortKeys(twosStartPubKey,AAA,AA,third,N)
+    print("Saving Collision List To Disk...Please Wait")
     with open(namedAndNumbered, "wb") as openedFile:
         pickle.dump(tupleOfTupleList, openedFile)
     idFile = "idFile.pkl"
