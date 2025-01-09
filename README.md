@@ -4,7 +4,7 @@ NOTICE:  YOU MUST KNOW HOW TO RUN A PYTHON PROGRAM FROM THE COMMAND LINE / TERMI
 ************
 **Over View**
 ************
-Version 1.6 is the Latest Working Release
+Version 1.6 is the Latest Working Release and works on both Linux and Windows operating systems.
 
 Version 1.6 must be run as Administrator / "Root" if using Linux Terminal.
 You must also install (as root user) "tqdm" and "tinyec" using this command:
