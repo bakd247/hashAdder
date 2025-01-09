@@ -8,9 +8,13 @@ Version 1.6 is the Latest Working Release
 
 Version 1.6 must be run as Administrator / "Root" if using Linux Terminal.
 You must also install (as root user) "tqdm" and "tinyec" using this command:
+
 sudo python3 -m pip install tinyec tqdm
+
 Then run hashAdder.py as root like this:
+
 sudo python3 hashAdder.py
+
 If using Windows you can run as administrator but it is not needed if you give file permissions to the current user.
 You may need to run the most recent version from command line / terminal as an administrator if using Linux or Mac in order to create the collisionList files...
 
