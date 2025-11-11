@@ -4,15 +4,17 @@ from functionality import binarySearch, recoverFoundKey, createKey, sortKeys, mu
 import time
 import os.path
 import pickle
-print("                                                  ")
-print("                                                  ")
-print("\033[0;32m _               _        _       _     _\033[00m")
-print("\033[0;32m| |__   __ _ ___| |__    / \   __| | __| | ___ _ __\033[00m")
-print("\033[0;32m| '_ \ / _` / __| '_ \  / _ \ / _` |/ _` |/ _ \ '__|\033[00m")
-print("\033[0;32m| | | | (_| \__ \ | | |/ ___ \ (_| | (_| |  __/ |\033[00m")
-print("\033[0;32m|_| |_|\__,_|___/_| |_/_/   \_\__,_|\__,_|\___|_|\033[00m")
-print("                                                  ")
-print("                                                  ")
+COLOR_GREEN = f"\033[92m"
+COLOR_RESET = f"\033[0m"
+print(r"                                                  ")
+print(r"                                                  ")
+print(COLOR_GREEN+r"      _               _        _       _     _"+COLOR_RESET)
+print(COLOR_GREEN+r"     | |__   __ _ ___| |__    / \   __| | __| | ___ _ __"+COLOR_RESET)
+print(COLOR_GREEN+r"     | '_ \ / _` / __| '_ \  / _ \ / _` |/ _` |/ _ \ '__|"+COLOR_RESET)
+print(COLOR_GREEN+r"     | | | | (_| \__ \ | | |/ ___ \ (_| | (_| |  __/ |"+COLOR_RESET)
+print(COLOR_GREEN+r"     |_| |_|\__,_|___/_| |_/_/   \_\__,_|\__,_|\___|_|"+COLOR_RESET)
+print(r"                                                  ")
+print(r"                                                  ")
 #Save collisionList to File or Create New            
 folder = "collisionLists"
 openDir = os.getcwd()
@@ -60,6 +62,7 @@ while ListFoundInFile == True:
 else:
     ##Need invalid entry loop here NOT in functionality
     ##First check if input each(XX, YY) is hex or not then check if valid
+    ##Both X and Y need a validHex check
     ##Use checkIfValidKey() and checkIfHex()
 
     XX = int((input("Please Enter Your Public Key X Coordinate In Hex Format:")),16)
