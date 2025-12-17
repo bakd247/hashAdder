@@ -1,8 +1,8 @@
 
 NOTICE:  YOU MUST KNOW HOW TO RUN A PYTHON PROGRAM FROM THE COMMAND LINE / TERMINAL IN ORDER TO USE THIS TOOL!!!
 
-Note: Best Performance using "pypy" I have not figured out why yet, but the newest versions of python run signifgantly slower than pypy does. I assume it has something to do wiht type hinting which is being added in the upcoming releases.
-the newest version loads collision list much faster but runs much slower and pypy runs much faster but loads slower...
+Note: Best Performance using "pypy" I have not figured out why yet, but the newest versions of python run signifgantly slower than pypy does. I assume it has something to do with "type hinting" which is being added in the upcoming releases.
+The newest versions of python, loads collision list much faster, but runs much slower, and pypy runs much faster but loads slower...
 
 ************
 **Installation of Prerequisites**
