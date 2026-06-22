@@ -7,10 +7,10 @@ The newest versions of python, loads collision list much faster, but runs much s
 ************
 **Installation of Prerequisites**
 ************
-Version 1.6 is the Latest Working Release and works on both Linux and Windows operating systems.
+Version 1.7 is the Latest Working Release and works on both Linux and Windows operating systems.
 To Install the prerequisites using Linux:
 
-Version 1.6 must be run as Administrator / "Root" if using Linux Terminal.
+Version 1.7 must be run as Administrator / "Root" if using Linux Terminal.
 You must also install (as root user) "tqdm" and "tinyec" using this command:
 
 sudo python3 -m pip install tinyec tqdm
