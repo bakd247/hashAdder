@@ -15,7 +15,10 @@ print(COLOR_GREEN+r"     | | | | (_| \__ \ | | |/ ___ \ (_| | (_| |  __/ |"+COLO
 print(COLOR_GREEN+r"     |_| |_|\__,_|___/_| |_/_/   \_\__,_|\__,_|\___|_|"+COLOR_RESET)
 print(r"                                                  ")
 print(r"                                                  ")
-#Save collisionList to File or Create New            
+#Save collisionList to File or Create New
+half = 57896044618658097711785492504343953926418782139537452191302581570759080747169
+N = 115792089237316195423570985008687907852837564279074904382605163141518161494337
+third = 77194726158210796949047323339125271901891709519383269588403442094345440996225            
 folder = "collisionLists"
 openDir = os.getcwd()
 fileToBeFound = os.path.join(openDir, folder)
@@ -39,6 +42,7 @@ while ListFoundInFile == True:
     folderToUse = input("Please Enter the Number File You Would Like to Use:")          
     if folderToUse == "C":
         ListFoundInFile = False
+        KeyFound = False
     else:
         if checkNotInt(folderToUse) == True:
             print("Invlaid Entry Please Try Again...")
@@ -56,30 +60,23 @@ while ListFoundInFile == True:
                     idTuple = pickle.load(idFile)
                     pubKeyResult = idTuple[0]
                     AA = idTuple[1]
-                break  
+                    KeyFound = False
+                    break 
             else:
                 print("Invlaid Entry Please Try Again...")      
 else:
-    ##Need invalid entry loop here NOT in functionality
-    ##First check if input each(XX, YY) is hex or not then check if valid
-    ##Both X and Y need a validHex check
-    ##Use checkIfValidKey() and checkIfHex()
-
     XX = int((input("Please Enter Your Public Key X Coordinate In Hex Format:")),16)
     YY = int((input("Please Enter Your Public Key Y Coordinate In Hex Format:")),16)
     pubKeyResult = createKey(XX,YY)
     print("This is the Key you entered in base 10 integer format:",pubKeyResult)
     namedFile = str(input("Please Enter a Name for This Collision List:"))
-    AA = int(input("Please Enter the Size of the Collision List you would like to Create. NOTE: The number you input will be doubled plus 1 then squared (If 'x' is the input then the formula is (2x+1)**2)(Example: input of 100 will OutPut - 40,401 total Keys Contained in the Multiples Collision List)(An input of 500 results in 1,002,001 keys)...Please Consider This and keep your input number below 10,000 to prevent overflow Errors caused By RAM capacity limitations. Best Performance around 1000...However Larger Nunbers are encouraged:"))
+    AA = int(input("Please Enter the Size of the Collision List you would like to Create. NOTE: The number you input will be doubled plus 1 then squared (If 'x' is the input then the formula is ((2x**2)+1)(Example: input of 100 will OutPut - 40,401 total Keys Contained in the Multiples Collision List)(An input of 500 results in 1,002,001 keys)...Please Consider This and keep your input number below 2,500 to prevent overflow Errors caused By RAM capacity limitations. Best Performance around 1000...However Larger Nunbers are encouraged:"))
     AAA = (AA * 2)
     totalKeys = ((AAA+1) ** 2)
     namedAndNumbered = (str(namedFile) + "--" + str(totalKeys) + "--" + str(pubKeyResult.x))
     currentDir = os.getcwd()
     os.mkdir(namedAndNumbered)             
     os.chdir(namedAndNumbered)                  
-    half = 57896044618658097711785492504343953926418782139537452191302581570759080747169
-    N = 115792089237316195423570985008687907852837564279074904382605163141518161494337
-    third = 77194726158210796949047323339125271901891709519383269588403442094345440996225
     twosStartPubKey = pubKeyResult * ((half ** (AA))%N)
     print("Creating Collision List...Please Wait...")
     print("Total Number of Keys Contained In Collision List:", totalKeys)
@@ -96,11 +93,8 @@ else:
     with open(idFile, "wb") as idedFile:
         pickle.dump(idTuple, idedFile)
 #EasyGrid Search...
-KeyFound = False
-N = 115792089237316195423570985008687907852837564279074904382605163141518161494337
-os.chdir("..")
-os.chdir("..")
-if input("Would Your Like to Skip Lookup table Search? recomended only if you have already tried it on the key in the past and NOT found an answer...Please enter 'y' to Skip or 'n' to run the lookup table Search:") != "y":
+    os.chdir("..")
+    os.chdir("..")
     print("Searching LookUp Table Grid for Collision Match...")
     firstRow = []
     for easyGridCount in range(16):
@@ -159,12 +153,9 @@ if input("Would Your Like to Skip Lookup table Search? recomended only if you ha
                 reverseEasyKeyToFind = reverseTryPlace.x
                 reverseEasyPrefix = int(str(reverseEasyKeyToFind)[:6])
                 privKeyR = (privKeyR - reverseEasyGrid) % N
-else:
-    pass
-#Enter easyCount Here...]
-#Start Here at 65537 and half - 65537
 print("Checking Easily Countable Positions for Collision Match...Please wait...")
 print("Easy Count is Currently NOT enabled until Verion 2.0")
+KeyFound = False
 ##Random Seach
 print("Searching Randomly for a Collision Match...Please wait...")
 while KeyFound != True:
